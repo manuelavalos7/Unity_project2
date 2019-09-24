@@ -37,8 +37,12 @@ public class playerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Time.deltaTime *-transform.forward * speed;
+            animate.SetBool("walkBack", true);
+            transform.position += Time.deltaTime * -transform.forward * speed;
             animate.speed = 1;
+        }
+        else {
+            animate.SetBool("walkBack", false);
         }
         if (Input.GetKey(KeyCode.D))
         {
